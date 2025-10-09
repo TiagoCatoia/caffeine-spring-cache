@@ -20,9 +20,4 @@ public class OrderController {
     public Order getUserNoCache(@PathVariable long id) {
         return service.getOrderNoCache(id); // sem cache
     }
-
-    @GetMapping("/with-cache/{id}")
-    public Order getUserWithCache(@PathVariable long id) {
-        return service.getOrderWithCache(id); // com cache
-    }
 }

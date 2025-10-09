@@ -15,12 +15,6 @@ public class OrderService {
 
     private final Random random = new Random();
 
-    @Cacheable(value = "orders", key = "#orderId")
-    public Order getOrderWithCache(Long orderId) {
-        simulateSlowDatabase();
-        return createOrder(orderId);
-    }
-
     public Order getOrderNoCache(Long orderId) {
         simulateSlowDatabase();
         return createOrder(orderId);
